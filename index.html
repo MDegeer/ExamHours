@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="tools/pure-min.css" rel="stylesheet" type="text/css">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div v-if="!configOpen" :class="{hide: hiddenMessage}" class="clickToConfig">Cliquer pour configurer</div>
+    <table @click="toggleConfig" @mousemove="mousemove" v-el:table>
+      <tr>
+        <td><img src="images/logo.gif">
+          <h2>{{title}}</h2>
+          <h5 v-if="consignes">Consignes</h5>
+          <ul id="consignes" v-if="consignes">
+            <li v-for="consigne in consigneLines" v-if="consigne" track-by="$index">{{consigne}}</li>
+          </ul>
+        </td>
+        <td>
+          <div>Heure courante :
+            <div class="clock">{{clock}}</div>
+          </div>
+          <div v-if="leaveTime &amp;&amp; !canLeave">Vous ne pouvez partir qu'après :
+            <div class="clock">{{leaveTime}}</div>
+          </div>
+          <div>Fin de l'épreuve :
+            <div class="clock">{{endTime}}</div>
+          </div>
+          <div v-if="!isFinished">Il vous reste :
+            <div class="clock">{{remainTime}}</div>
+          </div>
+          <div v-if="isFinished">
+            <h2>Épreuve terminée !</h2>
+          </div>
+          <div v-if="leaveTime &amp;&amp; canLeave">
+            <h5>Vous êtes désormais libres de partir !</h5>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <div class="credits">Par Pluquet Frédéric (fpluquet@heb.be)</div>
+    <div v-if="configOpen" class="overlay"></div>
+    <form v-if="configOpen" class="pure-form pure-form-stacked">
+      <fieldset>
+        <legend>Configuration</legend>
+        <label>Heure de fin (HH:MM)</label>
+        <input v-model="endTime">
+        <label>Heure de départ possible (HH:MM, vide si inutile)</label>
+        <input v-model="leaveTime">
+        <label>Titre de l'épreuve</label>
+        <input v-model="title">
+        <label>Consignes (un item par ligne)</label>
+        <textarea v-model="consignes" rows="15"></textarea><a @click="toggleConfig" class="pure-button pure-button-primary stop">Terminer</a>
+      </fieldset>
+    </form>
+    <script src="tools/vue.1.0.11.js"></script>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

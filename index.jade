@@ -1,0 +1,60 @@
+doctype html
+html
+	head
+		meta(charset='utf-8')
+		link(href='tools/pure-min.css', rel='stylesheet', type='text/css')
+		link(href='styles/style.css', rel='stylesheet', type='text/css')
+
+	body
+		.clickToConfig(v-if='!configOpen', :class='{hide: hiddenMessage}') Cliquer pour configurer
+		table(@click='toggleConfig', @mousemove='mousemove', v-el:table) 
+			tr
+				td
+					img(src='images/logo.gif')
+					h2 {{title}}
+					h5(v-if='consignes') Consignes
+					ul#consignes(v-if='consignes')
+						li(v-for='consigne in consigneLines', v-if='consigne', track-by="$index") {{consigne}}
+				td
+					div 
+						| Heure courante :
+						.clock {{clock}}
+					
+					div(v-if='leaveTime && !canLeave')
+						| Vous ne pouvez partir qu'après :
+						.clock {{leaveTime}}
+					
+					div 
+						| Fin de l'épreuve :
+						.clock {{endTime}}
+			
+					div(v-if='!isFinished')
+						| Il vous reste :
+						.clock {{remainTime}}
+
+					div(v-if='isFinished')
+						h2 Épreuve terminée !
+
+					div(v-if='leaveTime && canLeave')
+						h5 Vous êtes désormais libres de partir !
+		.credits Par Pluquet Frédéric (fpluquet@heb.be)
+		.overlay(v-if='configOpen')
+		form.pure-form.pure-form-stacked(v-if='configOpen')
+			fieldset
+				legend Configuration
+				
+				label Heure de fin (HH:MM)
+				input(v-model='endTime')
+
+				label Heure de départ possible (HH:MM, vide si inutile)
+				input(v-model='leaveTime')
+
+				label Titre de l'épreuve
+				input(v-model='title')
+
+				label Consignes (un item par ligne)
+				textarea(v-model='consignes', rows='15')
+
+				a.pure-button.pure-button-primary.stop(@click='toggleConfig') Terminer
+		script(src='tools/vue.1.0.11.js')
+		script(src='scripts/script.js')
