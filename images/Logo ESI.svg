@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="31.75mm" height="59.972221mm" viewBox="0 0 112.5 212.5" id="svg2" version="1.1" inkscape:version="0.91 r13725" sodipodi:docname="Logo ESI.svg">
+  <defs id="defs4"/>
+  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="3.959798" inkscape:cx="-13.239964" inkscape:cy="94.076328" inkscape:document-units="px" inkscape:current-layer="layer1" showgrid="false" fit-margin-top="0" fit-margin-left="0" fit-margin-right="0" fit-margin-bottom="0" inkscape:window-width="2560" inkscape:window-height="1377" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:window-maximized="1"/>
+  <metadata id="metadata7">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title/>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g inkscape:label="Logo ESI Rectangle rouge" inkscape:groupmode="layer" id="layer1" transform="translate(-295.17859,-420.39795)" style="display:inline;opacity:1">
+    <rect style="fill:#ff5555;fill-rule:evenodd" id="rect3348" width="112.75254" height="140.52663" x="294.92606" y="420.39795"/>
+    <rect style="fill:#a52b34;fill-opacity:1;fill-rule:evenodd" id="rect3350" width="112.88455" height="141.03171" x="295.17859" y="420.39795"/>
+  </g>
+  <g inkscape:groupmode="layer" id="layer3" inkscape:label="Logo ESI Rectangle bleu" style="display:inline;opacity:1">
+    <rect style="fill:#6dc0d0;fill-opacity:1;fill-rule:evenodd" id="rect3355" width="112.5" height="68.690369" x="0.50507629" y="143.80963"/>
+  </g>
+  <g inkscape:groupmode="layer" id="layer4" inkscape:label="Logo ESI Texte heb" style="display:inline;opacity:1">
+    <text xml:space="preserve" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:60px;line-height:125%;font-family: sans-serif;-inkscape-font-specification:'Microsoft Tai Le';letter-spacing:-2.63000011px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" x="8.8388338" y="43.551983" id="text3358" sodipodi:linespacing="125%"><tspan sodipodi:role="line" id="tspan3360" x="8.8388338" y="43.551983">heb</tspan></text>
+  </g>
+  <g inkscape:groupmode="layer" id="layer5" inkscape:label="Logo ESI Texte esi" style="opacity:1">
+    <text xml:space="preserve" style="font-style:normal;font-variant:normal;font-weight: 100;font-stretch:normal;font-size:43.75px;line-height:125%;font-family: sans-serif;-inkscape-font-specification:'Yu Gothic';letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" x="51.265244" y="200.86293" id="text4163" sodipodi:linespacing="125%"><tspan sodipodi:role="line" id="tspan4165" x="51.265244" y="200.86293" dx="0 -2.7299995">es<tspan style="font-style:normal;font-variant:normal;font-weight: 600;font-stretch:normal;font-family: sans-serif;-inkscape-font-specification:'Yu Gothic Bold';fill:#ffffff" id="tspan4710">i</tspan></tspan></text>
+  </g>
+</svg>
