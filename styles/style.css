@@ -21,6 +21,16 @@ table {
         height: 100px; }
       table td:first-child ul, table td:first-child h5 {
         text-align: left; }
+    table td:nth-child(2) table td {
+      padding: 10px 30px; }
+    table td:nth-child(2) > *:not(:first-child) {
+      padding-top: 40px; }
+
+.tdsmall {
+  font-size: 70%; }
+
+.small {
+  font-size: 40%; }
 
 .overlay {
   position: absolute;

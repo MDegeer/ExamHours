@@ -9,33 +9,35 @@ html
 		.clickToConfig(v-if='!configOpen', :class='{hide: hiddenMessage}') Cliquer pour configurer
 		table(@click='toggleConfig', @mousemove='mousemove', v-el:table) 
 			tr
-				td
+				td.tdsmall
 					img(src='images/logo.gif')
 					h2 {{title}}
 					h5(v-if='consignes') Consignes
 					ul#consignes(v-if='consignes')
 						li(v-for='consigne in consigneLines', v-if='consigne', track-by="$index") {{consigne}}
 				td
-					div 
-						| Heure courante :
-						.clock {{clock}}
+					table.small
+						tr
+							td 
+								| Heure courante
+								.clock {{clock}}
+							td
+								| Fin de l'épreuve
+								.clock {{endTime}}
 					
-					div(v-if='leaveTime && !canLeave')
-						| Vous ne pouvez partir qu'après :
-						.clock {{leaveTime}}
-					
-					div 
-						| Fin de l'épreuve :
-						.clock {{endTime}}
-			
+								
 					div(v-if='!isFinished')
-						| Il vous reste :
+						| Il vous reste
 						.clock {{remainTime}}
 
 					div(v-if='isFinished')
 						h2 Épreuve terminée !
 
-					div(v-if='leaveTime && canLeave')
+					div.small(v-if='leaveTime && !canLeave')
+						| Vous ne pouvez partir qu'après
+						.clock {{leaveTime}}
+
+					div.small(v-if='leaveTime && canLeave')
 						h5 Vous êtes désormais libres de partir !
 		.credits Par Pluquet Frédéric (fpluquet@heb.be)
 		.overlay(v-if='configOpen')

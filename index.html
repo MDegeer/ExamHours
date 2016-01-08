@@ -9,7 +9,7 @@
     <div v-if="!configOpen" :class="{hide: hiddenMessage}" class="clickToConfig">Cliquer pour configurer</div>
     <table @click="toggleConfig" @mousemove="mousemove" v-el:table>
       <tr>
-        <td><img src="images/logo.gif">
+        <td class="tdsmall"><img src="images/logo.gif">
           <h2>{{title}}</h2>
           <h5 v-if="consignes">Consignes</h5>
           <ul id="consignes" v-if="consignes">
@@ -17,22 +17,26 @@
           </ul>
         </td>
         <td>
-          <div>Heure courante :
-            <div class="clock">{{clock}}</div>
-          </div>
-          <div v-if="leaveTime &amp;&amp; !canLeave">Vous ne pouvez partir qu'après :
-            <div class="clock">{{leaveTime}}</div>
-          </div>
-          <div>Fin de l'épreuve :
-            <div class="clock">{{endTime}}</div>
-          </div>
-          <div v-if="!isFinished">Il vous reste :
+          <table class="small">
+            <tr>
+              <td>Heure courante
+                <div class="clock">{{clock}}</div>
+              </td>
+              <td>Fin de l'épreuve
+                <div class="clock">{{endTime}}</div>
+              </td>
+            </tr>
+          </table>
+          <div v-if="!isFinished">Il vous reste
             <div class="clock">{{remainTime}}</div>
           </div>
           <div v-if="isFinished">
             <h2>Épreuve terminée !</h2>
           </div>
-          <div v-if="leaveTime &amp;&amp; canLeave">
+          <div v-if="leaveTime &amp;&amp; !canLeave" class="small">Vous ne pouvez partir qu'après
+            <div class="clock">{{leaveTime}}</div>
+          </div>
+          <div v-if="leaveTime &amp;&amp; canLeave" class="small">
             <h5>Vous êtes désormais libres de partir !</h5>
           </div>
         </td>
