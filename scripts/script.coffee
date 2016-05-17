@@ -52,7 +52,7 @@ new Vue
 			return @getDiff(@clock, @endTime)
 
 		updateClock: ->
-			@clock = new Date().toLocaleTimeString().substr(0,5)
+			@clock = new Date().toTimeString().replace("/.*(\d{2}:\d{2}:\d{2}.*/", "$1").substr(0,5)
 
 		toggleConfig: ->
 			@configOpen = !@configOpen

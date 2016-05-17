@@ -72,7 +72,7 @@
         return this.getDiff(this.clock, this.endTime);
       },
       updateClock: function() {
-        return this.clock = new Date().toLocaleTimeString().substr(0, 5);
+        return this.clock = new Date().toTimeString().replace("/.*(\d{2}:\d{2}:\d{2}.*/", "$1").substr(0, 5);
       },
       toggleConfig: function() {
         return this.configOpen = !this.configOpen;
