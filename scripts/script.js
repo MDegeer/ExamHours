@@ -45,7 +45,11 @@
           return table.style.width = ntw + '%';
         };
       })(this);
-      return window.onresize();
+      return Vue.nextTick((function(_this) {
+        return function() {
+          return window.onresize();
+        };
+      })(this));
     },
     methods: {
       getDiff: function(time1, time2) {

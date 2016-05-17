@@ -32,7 +32,8 @@ new Vue
 			ntw = Math.min(100 / scale, 100) 
 			table.style.transform = 'scale('+scale+')'
 			table.style.width = ntw+'%'
-		window.onresize()
+		Vue.nextTick =>
+			window.onresize()
 	methods:
 		getDiff: (time1, time2) ->
 			endHour = parseInt(time2.substr(0,2))
