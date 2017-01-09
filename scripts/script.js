@@ -9,7 +9,8 @@
       title: "Examen",
       consignes: "Éteignez vos téléphones.",
       configOpen: true,
-      hiddenMessage: true
+      hiddenMessage: true,
+      deltaTime: 0
     },
     created: function() {
       var config, k, v;
@@ -76,7 +77,8 @@
         return this.getDiff(this.clock, this.endTime);
       },
       updateClock: function() {
-        return this.clock = new Date().toTimeString().replace("/.*(\d{2}:\d{2}:\d{2}.*/", "$1").substr(0, 5);
+        this.deltaTime = parseInt(this.deltaTime) || 0;
+        return this.clock = new Date(new Date().getTime() + this.deltaTime * 1000 * 60).toTimeString().replace("/.*(\d{2}:\d{2}:\d{2}.*/", "$1").substr(0, 5);
       },
       toggleConfig: function() {
         return this.configOpen = !this.configOpen;
@@ -142,6 +144,13 @@
         Vue.nextTick(function() {
           return window.onresize();
         });
+        return this.saveState();
+      },
+      deltaTime: function() {
+        Vue.nextTick(function() {
+          return window.onresize();
+        });
+        this.updateClock();
         return this.saveState();
       }
     }

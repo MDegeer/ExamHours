@@ -8,6 +8,7 @@ new Vue
 		consignes: "Éteignez vos téléphones."
 		configOpen: true
 		hiddenMessage: true
+		deltaTime: 0
 	created: ->
 		config = localStorage.getItem('examHours-config')
 		if config?
@@ -53,7 +54,9 @@ new Vue
 			return @getDiff(@clock, @endTime)
 
 		updateClock: ->
-			@clock = new Date().toTimeString().replace("/.*(\d{2}:\d{2}:\d{2}.*/", "$1").substr(0,5)
+			@deltaTime = parseInt(@deltaTime) || 0
+			@clock = new Date(new Date().getTime() + @deltaTime * 1000 * 60).toTimeString().replace("/.*(\d{2}:\d{2}:\d{2}.*/", "$1").substr(0,5)
+
 
 		toggleConfig: ->
 			@configOpen = !@configOpen
@@ -95,6 +98,10 @@ new Vue
 			@saveState()
 		consignes: ->
 			Vue.nextTick -> window.onresize()
+			@saveState()
+		deltaTime: ->
+			Vue.nextTick -> window.onresize()
+			@updateClock()
 			@saveState()
 
 

@@ -58,6 +58,9 @@ html
 				label Consignes (un item par ligne)
 				textarea(v-model='consignes', rows='15')
 
+				label Minutes de décallage de l'heure du PC ({{clock}})
+				input(v-model='deltaTime')
+
 				a.pure-button.pure-button-primary.stop(@click='toggleConfig') Terminer
 		script(src='tools/vue.1.0.11.js')
 		script(src='scripts/script.js')
