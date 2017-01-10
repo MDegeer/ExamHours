@@ -11,7 +11,7 @@ html
 		table(@click='toggleConfig', @mousemove='mousemove', v-el:table) 
 			tr
 				td.tdsmall
-					img(src='images/Logo ESI.svg')
+					img(src='images/logo-esi.png')
 					h2 {{title}}
 					h5(v-if='consignes') Consignes
 					ul#consignes(v-if='consignes')
@@ -40,7 +40,7 @@ html
 
 					div.small(v-if='leaveTime && canLeave')
 						h5 Vous êtes désormais libres de partir !
-		.credits Par Pluquet Frédéric (fpluquet@heb.be)
+		.credits Par Pluquet Frédéric (fpluquet@he2b.be)
 		.overlay(v-if='configOpen')
 		form.pure-form.pure-form-stacked(v-if='configOpen')
 			fieldset
