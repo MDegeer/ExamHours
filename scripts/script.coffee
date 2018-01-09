@@ -26,10 +26,11 @@ new Vue
 			ww = window.innerWidth
 			wh = window.innerHeight
 			table = @.$els.table
+			table.style = ''
 			tw = table.offsetWidth + 30 
 			th = table.offsetHeight + 30
 
-			scale = wh / th
+			scale = Math.min(wh / th, ww / tw)
 			ntw = Math.min(100 / scale, 100) 
 			table.style.transform = 'scale('+scale+')'
 			table.style.width = ntw+'%'
