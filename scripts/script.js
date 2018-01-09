@@ -41,7 +41,7 @@
           table.style = '';
           tw = table.offsetWidth + 30;
           th = table.offsetHeight + 30;
-          scale = Math.min(wh / th, ww / tw);
+          scale = wh / th;
           ntw = Math.min(100 / scale, 100);
           table.style.transform = 'scale(' + scale + ')';
           return table.style.width = ntw + '%';
