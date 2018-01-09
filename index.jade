@@ -15,7 +15,7 @@ html
 					h2 {{title}}
 					h5(v-if='consignes') Consignes
 					ul#consignes(v-if='consignes')
-						li(v-for='consigne in consigneLines', v-if='consigne', track-by="$index") {{consigne}}
+						li(v-for='consigne in consigneLines', v-if='consigne', track-by="$index") {{{consigne}}}
 				td
 					table.small
 						tr
