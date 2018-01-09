@@ -1,14 +1,17 @@
 new Vue
 	el: 'body'
-	data:
-		clock: '00:00'
-		leaveTime: '15:30'
-		endTime: '16:00'
-		title: "Examen"
-		consignes: "Éteignez vos téléphones."
-		configOpen: true
-		hiddenMessage: true
-		deltaTime: 0
+	data: ->
+		return {
+			clock: '00:00'
+			leaveTime: '15:30'
+			endTime: '16:00'
+			title: "Examen"
+			consignes: "Éteignez vos téléphones."
+			configOpen: true
+			hiddenMessage: true
+			deltaTime: 0
+			manualScale: 1
+		}
 	created: ->
 		config = localStorage.getItem('examHours-config')
 		if config?
@@ -32,7 +35,7 @@ new Vue
 
 			scale = wh / th
 			ntw = Math.min(100 / scale, 100) 
-			table.style.transform = 'scale('+scale+')'
+			table.style.transform = 'scale(' + (scale * @manualScale) + ")"
 			table.style.width = ntw+'%'
 			# table.style.marginTop = (Math.max(0, wh - table.offsetHeight) ) / 2 + "px"
 
@@ -105,6 +108,9 @@ new Vue
 		deltaTime: ->
 			Vue.nextTick -> window.onresize()
 			@updateClock()
+			@saveState()
+		manualScale: ->
+			Vue.nextTick -> window.onresize()
 			@saveState()
 
 

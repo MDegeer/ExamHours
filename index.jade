@@ -55,11 +55,14 @@ html
 				label Titre de l'épreuve
 				input(v-model='title')
 
-				label Consignes (un item par ligne)
+				label Consignes (un item par ligne, html accepté)
 				textarea(v-model='consignes', rows='15')
 
 				label Minutes de décallage de l'heure du PC ({{clock}})
 				input(v-model='deltaTime')
+
+				label Zoom manuel
+				input(type="range", v-model='manualScale', min="0.1" max="2", step="0.01")
 
 				a.pure-button.pure-button-primary.stop(@click='toggleConfig') Terminer
 		script(src='tools/vue.1.0.11.js')

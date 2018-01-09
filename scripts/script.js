@@ -2,15 +2,18 @@
 (function() {
   new Vue({
     el: 'body',
-    data: {
-      clock: '00:00',
-      leaveTime: '15:30',
-      endTime: '16:00',
-      title: "Examen",
-      consignes: "Éteignez vos téléphones.",
-      configOpen: true,
-      hiddenMessage: true,
-      deltaTime: 0
+    data: function() {
+      return {
+        clock: '00:00',
+        leaveTime: '15:30',
+        endTime: '16:00',
+        title: "Examen",
+        consignes: "Éteignez vos téléphones.",
+        configOpen: true,
+        hiddenMessage: true,
+        deltaTime: 0,
+        manualScale: 1
+      };
     },
     created: function() {
       var config, k, v;
@@ -43,7 +46,7 @@
           th = table.offsetHeight + 30;
           scale = wh / th;
           ntw = Math.min(100 / scale, 100);
-          table.style.transform = 'scale(' + scale + ')';
+          table.style.transform = 'scale(' + (scale * _this.manualScale) + ")";
           return table.style.width = ntw + '%';
         };
       })(this);
@@ -152,6 +155,12 @@
           return window.onresize();
         });
         this.updateClock();
+        return this.saveState();
+      },
+      manualScale: function() {
+        Vue.nextTick(function() {
+          return window.onresize();
+        });
         return this.saveState();
       }
     }
