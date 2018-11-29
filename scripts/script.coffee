@@ -43,10 +43,12 @@ new Vue
 			window.onresize()
 	methods:
 		getDiff: (time1, time2) ->
-			endHour = parseInt(time2.substr(0,2))
-			endMinutes = parseInt(time2.substr(3,2))
-			hour = parseInt(time1.substr(0,2))
-			minutes = parseInt(time1.substr(3,2))
+			split = time2.split(":");
+			endHour = parseInt(split[0]);
+			endMinutes = parseInt(split[1]);
+			split = time1.split(":");
+			hour = parseInt(split[0]);
+			minutes = parseInt(split[1]);
 
 			remainMinutes = endHour * 60 + endMinutes - (hour * 60 + minutes)
 			if remainMinutes <= 0

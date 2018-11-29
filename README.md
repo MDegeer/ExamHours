@@ -4,3 +4,6 @@ Ce code permet de projeter les consignes, heures courante, de fin et de départ 
 [Demo disponible ici.](http://heb-esi.github.io/ExamHours/) - [Lien court : http://esi.link/horloge](http://esi.link/horloge)
 
 
+Installation CoffeeScript :
+
+    npm install --save-dev coffeescript
